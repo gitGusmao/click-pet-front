@@ -1,0 +1,12 @@
+<div class="product" fxLayout="column wrap" fxLayoutAlign="center center"
+  [routerLink]="['/',productData?.id,'detail']">
+  <div class="media-wrapper">
+    <div class="media-image" fxLayoutAlign="center center">
+      <img src="assets/img/racao1.jpg">
+    </div>
+  </div>
+  <div class="product-name" fxLayout="column wrap" fxLayoutAlign="center center">
+    <h4>{{productData?.nome}}</h4>
+    <div class="price">{{productData?.preco | currency:'BRL'}}</div>
+  </div>
+</div>

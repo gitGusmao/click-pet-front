@@ -1,0 +1,60 @@
+<div class="product-wrapper" fxLayout="row" fxLayout.lt-md="column" fxFlexFill>
+  <div class="content-wrapper product-carousel" fxFlex fxLayoutAlign="center center">
+    <div class="media-wrapper">
+
+      <div class="product-promotion" *ngIf="productDetail?.promotionProduct">
+        <span>{{productDetail?.discountPercentage}}% OFF</span>
+      </div>
+
+      <div class="media-image" fxLayoutAlign="center center">
+        <a href="">
+          <img src="assets/img/racao1.jpg" alt="">
+        </a>
+      </div>
+
+      <div class="thumbnail-wrapper" fxLayoutGap="10px" fxLayout="row" fxLayoutAlign="center">
+        <div class="thumbnail">
+          <a href="">
+            <img src="assets/img/racao1.jpg" alt="">
+          </a>
+        </div>
+        <div class="thumbnail">
+          <a href="">
+            <img src="assets/img/racao1.jpg" alt="">
+          </a>
+        </div>
+        <div class="thumbnail">
+          <a href="">
+            <img src="assets/img/racao1.jpg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="product-name">
+    <h2>{{productDetail?.nome}}</h2>
+    <span>{{productDetail?.preco | currency:'BRL'}}</span>
+  </div>
+  <div class="content-wrapper product-detail" fxLayout="column" fxFlex fxLayoutAlign="center center">
+    <div class="product-description">
+      <p>{{productDetail?.description}}</p>
+
+      <div class="product-stock">
+        <h3>Quantidade em estoque: {{productDetail?.stock}}</h3>
+      </div>
+
+      <mat-form-field appearance="outline" class="width-100">
+        <mat-label>Selecionar tamanho</mat-label>
+        <mat-select>
+          <mat-option>
+            teste
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="product-payment">
+        <button mat-raised-button class="btn-paymant width-100" routerLink="/cart">Comprar</button>
+      </div>
+    </div>
+  </div>
+</div>

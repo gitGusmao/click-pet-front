@@ -1,0 +1,37 @@
+@import "/src/assets/styles/scss/colors.scss";
+
+.forgot-wrapper {
+  padding: 3rem;
+
+  .forgot-title {
+    text-align: center;
+
+    h2 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: $text-color;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  }
+
+  .forgot-stepper {
+    max-width: 500px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 3rem;
+    margin: 3rem;
+
+    .forgot-message {
+        padding: 0.5rem;
+        text-align: center;
+    }
+  }
+}
+
+@media (max-width: 599px) {
+  .forgot-stepper {
+    background-color: transparent !important;
+    padding: 0 !important;
+  }
+}

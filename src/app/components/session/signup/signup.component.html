@@ -1,0 +1,36 @@
+<div class="signup-wrapper">
+  <div class="signup" fxLayout="column" fxLayoutAlign="center center">
+    <div class="signup-title">
+      <h2>Cadastro do usuário</h2>
+    </div>
+    <div class="signup-form">
+      <mat-form-field appearance="outline" class="width-100">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="width-100">
+        <mat-label>Senha</mat-label>
+        <input matInput type="password" placeholder="Senha">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="width-100">
+        <mat-label>CPF</mat-label>
+        <input matInput placeholder="CPF" mask="000.000.000-00">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="width-100">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Nome">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="width-100">
+        <mat-label>Data de nascimento</mat-label>
+        <input matInput [matDatepicker]="picker" disabled>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker [disabled]=false></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="width-100">
+        <mat-label>Telefone</mat-label>
+        <input matInput placeholder="Telefone (00) 00000-0000" mask="(00) 00000-0000">
+      </mat-form-field>
+      <button mat-raised-button class="btn-paymant width-100" routerLink="/cart">Cadastrar</button>
+    </div>
+  </div>
+</div>

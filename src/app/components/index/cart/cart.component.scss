@@ -1,0 +1,48 @@
+@import "/src/assets/styles/scss/colors.scss";
+
+.cart-wrapper {
+  padding: 3rem;
+
+  .cart-title {
+    h2 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: $text-color;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    width: 100%;
+    text-align: center;
+  }
+
+  .cart-list {
+    padding: 3rem 0;
+  }
+
+  .cart-checkout {
+    box-shadow: 0px 0px 15px rgb(195 195 195 / 60%);
+    background-color: #ffffff;
+    padding: 1rem;
+    width: 100%;
+    max-width: 800px;
+
+    .checkout-btn {
+      width: 100%;
+    }
+
+    .cart-total {
+      padding: 0 2rem;
+      color: $product-price-color;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 959px) {
+  .cart-total {
+    padding: 1rem 0!important;
+  }
+}

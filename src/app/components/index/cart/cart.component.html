@@ -1,0 +1,24 @@
+<div class="cart-wrapper" fxLayout="row wrap" fxLayoutAlign="center center">
+  <div class="cart-title">
+    <h2>Seu carrinho</h2>
+  </div>
+  <div class="cart-list" fxLayoutAlign="center center" fxFlexFill>
+    <app-product-item fxFlex="0 1 20%" fxFlex.lt-md="0 1 50%" fxFlex.lt-lg="0 1 25%" fxFlex.lt-sm="100%">
+    </app-product-item>
+  </div>
+  <div class="cart-checkout" fxLayout="row" fxLayout.lt-md="column wrap" fxLayoutAlign="center center">
+      <div class="checkout-btn">
+        <button mat-raised-button class="btn-paymant width-100">Continuar comprando</button>
+      </div>
+      <div class="cart-total" fxLayoutAlign="center center">
+          Total: R$ 300,00
+      </div>
+      <div class="checkout-btn">
+        <!-- <button mat-raised-button class="btn-paymant width-100" routerLink="/session/signin">Finalizar compra</button> -->
+        <a mat-raised-button class="btn-paymant width-100"
+        href="https://api.whatsapp.com/send/?phone=5516992185504&text=oi" target="_blank">
+        Finalizar compra
+      </a>
+      </div>
+  </div>
+</div>

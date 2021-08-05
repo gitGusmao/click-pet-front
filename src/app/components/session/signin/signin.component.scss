@@ -1,0 +1,40 @@
+@import "/src/assets/styles/scss/colors.scss";
+
+.signin-wrapper {
+  padding: 3rem;
+
+  .signin-title {
+    text-align: center;
+
+    h2 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: $text-color;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  }
+
+  .signin-form {
+    max-width: 500px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 3rem;
+    margin: 3rem;
+
+    .signup {
+      text-align: center;
+
+      .forgot {
+        padding-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 599px) {
+  .signin-form {
+    background-color: transparent!important;
+    padding: 0!important;
+  }
+}

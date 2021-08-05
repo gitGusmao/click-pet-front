@@ -1,0 +1,37 @@
+<div class="forgot-wrapper">
+  <div class="forgot" fxLayout="column" fxLayoutAlign="center center">
+    <div class="forgot-title">
+      <h2>Esqueci senha</h2>
+    </div>
+
+    <div class="forgot-stepper">
+      <mat-stepper labelPosition="bottom" linear="true" #stepper>
+        <mat-step [stepControl]="firstFormGroup" [completed]="isCompleted">
+          <ng-template matStepLabel>Informe seu email</ng-template>
+          <form [formGroup]="firstFormGroup">
+            <mat-form-field appearance="outline" class="width-100">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Email" type="email" formControlName="email" required>
+            </mat-form-field>
+            <button mat-raised-button class="btn-paymant width-100" (click)="checkEmail()">Validar</button>
+          </form>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Alterar senha</ng-template>
+          <div class="forgot-message">
+              <p>Um código de segurança foi enviado no seu email.</p>
+          </div>
+          <mat-form-field appearance="outline" class="width-100">
+            <mat-label>Código</mat-label>
+            <input matInput placeholder="Código">
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="width-100">
+            <mat-label>Nova Senha</mat-label>
+            <input matInput type="password" placeholder="Nova Senha">
+          </mat-form-field>
+          <button mat-raised-button class="btn-paymant width-100">Trocar senha</button>
+        </mat-step>
+      </mat-stepper>
+    </div>
+  </div>
+</div>

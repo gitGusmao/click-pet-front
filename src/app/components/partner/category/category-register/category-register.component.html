@@ -1,0 +1,22 @@
+<div class="breadcrumb" fxLayout>
+  <h1>Cadastrar Categoria</h1>
+</div>
+<div class="product-wrapper">
+  <form [formGroup]="formCategory">
+    <div fxLayout="row wrap" class="row">
+      <div class="col" fxFlex="0 1 100%">
+        <mat-form-field appearance="outline">
+          <mat-label>Nome da Categoria</mat-label>
+          <input matInput placeholder="Nome do produto" formControlName="nome" required>
+          <mat-error *ngIf="form.nome.errors?.required">Nome é um campo obrigatório</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+  <div fxLayout="row wrap">
+    <div fxFlex="0 1 25%" fxFlex.lt-md="0 1 50%" fxFlex.lt-lg="0 1 25%" fxFlex.lt-sm="100%">
+      <button mat-raised-button class="btn-partner width-100" (click)="submitCategory()"
+        [disabled]="formCategory.invalid">Cadastrar</button>
+    </div>
+  </div>
+</div>

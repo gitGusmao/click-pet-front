@@ -1,0 +1,21 @@
+<mat-drawer-container class="partner-wrapper" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side" opened="true">
+    <div class="side-navigation">
+      <ul>
+        <li *ngFor="let item of menuItens">
+          <a [routerLink]=item.state>
+          <div class="side-item">
+            <mat-icon>{{item.icon}}</mat-icon>
+            <p>{{item.name}}</p>
+          </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </mat-drawer>
+
+  <div class="content-wrapper">
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-drawer-container>

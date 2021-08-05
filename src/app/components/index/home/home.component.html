@@ -1,0 +1,13 @@
+<div class="content-wrapper" fxLayout="column" fxLayoutAlign="flex-start" fxLayout.lt-sm="column">
+  <div class="category-coursel-slide-wrapper">
+    <app-coursel-slide></app-coursel-slide>
+  </div>
+  <div class="category-coursel-wrapper">
+    <app-coursel></app-coursel>
+  </div>
+  <div class="product-list-wrapper" fxLayout="row wrap" fxLayoutGap="16px grid">
+    <app-product-item *ngFor="let item of productList" [productData]="item" fxFlex="0 1 20%" fxFlex.lt-md="0 1 50%"
+      fxFlex.lt-lg="0 1 (25%-10px)" fxFlex.lt-sm="100%">
+    </app-product-item>
+  </div>
+</div>

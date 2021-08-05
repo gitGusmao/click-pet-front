@@ -1,0 +1,18 @@
+@import "/src/assets/styles/scss/colors.scss";
+
+.content-wrapper {
+  .category-coursel-wrapper {
+    margin-bottom: 1rem;
+
+    .category-coursel {
+      padding: 1rem;
+      background-color: #ffffff;
+
+      img {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}

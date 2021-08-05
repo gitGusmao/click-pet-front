@@ -1,0 +1,156 @@
+<div class="breadcrumb" fxLayout>
+  <h1>Cadastrar Produto</h1>
+</div>
+<div class="product-wrapper">
+  <form [formGroup]="formProduct">
+    <div fxLayout="row wrap" class="row">
+      <div class="col" fxFlex="0 1 75%" fxFlex.lt-md="0 1 50%" fxFlex.lt-lg="0 1 75%" fxFlex.lt-sm="100%">
+        <mat-form-field appearance="outline">
+          <mat-label>Nome do produto</mat-label>
+          <input matInput placeholder="Nome do produto" formControlName="name" required>
+          <mat-error *ngIf="form.name.errors?.required">Nome é um campo obrigatório</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col" fxFlex="0 1 25%" fxFlex.lt-md="0 1 50%" fxFlex.lt-lg="0 1 25%" fxFlex.lt-sm="100%">
+        <mat-form-field appearance="outline">
+          <mat-label>Categoria</mat-label>
+          <mat-select formControlName="category" required>
+            <mat-option value="" selected></mat-option>
+            <mat-option *ngFor="let cat of category" [value]="cat._id">{{cat.name}}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="form.category.hasError('required')">Selecione uma categoria</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row wrap" class="row">
+      <div class="col" fxFlex="0 1 25%" fxFlex.lt-md="0 1 50%" fxFlex.lt-lg="0 1 25%" fxFlex.lt-sm="100%">
+        <mat-form-field appearance="outline">
+          <mat-label>Preço de custo</mat-label>
+          <input matInput placeholder="R$ 0,00" formControlName="costPrice" currencyMask
+            [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+        </mat-form-field>
+      </div>
+      <div class="col" fxFlex="0 1 25%" fxFlex.lt-md="0 1 50%" fxFlex.lt-lg="0 1 25%" fxFlex.lt-sm="100%">
+        <mat-form-field appearance="outline">
+          <mat-label>Preço de venda</mat-label>
+          <input matInput placeholder="R$ 0,00" formControlName="salePrice" currencyMask
+            [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" required>
+          <mat-error *ngIf="form.salePrice.errors?.required">Preço de venda é um campo obrigatório</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col" fxFlex="0 1 25%" fxFlex.lt-md="0 1 50%" fxFlex.lt-lg="0 1 25%" fxFlex.lt-sm="100%">
+        <mat-form-field appearance="outline">
+          <mat-label>Desconto (%)</mat-label>
+          <input matInput placeholder="000 %" formControlName="discount" mask="percent" suffix="%">
+        </mat-form-field>
+      </div>
+      <div class="col" fxFlex="0 1 25%" fxFlex.lt-md="0 1 50%" fxFlex.lt-lg="0 1 25%" fxFlex.lt-sm="100%">
+        <mat-form-field appearance="outline">
+          <mat-label>Preço com desconto</mat-label>
+          <input matInput placeholder="R$ 0,00" formControlName="discountPrice" currencyMask
+            [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row wrap" class="row">
+      <div class="col" fxFlex="0 1 25%" fxFlex.lt-md="0 1 50%" fxFlex.lt-lg="0 1 25%" fxFlex.lt-sm="100%">
+        <mat-form-field appearance="outline">
+          <mat-label>Peso</mat-label>
+          <input matInput placeholder="1 kg" formControlName="weight" mask="999" suffix=" kg"
+            [specialCharacters]="[ '.' ]">
+        </mat-form-field>
+      </div>
+      <div class="col" fxFlex="0 1 25%" fxFlex.lt-md="0 1 50%" fxFlex.lt-lg="0 1 25%" fxFlex.lt-sm="100%">
+        <mat-form-field appearance="outline">
+          <mat-label>Altura</mat-label>
+          <input matInput placeholder="Altura" formControlName="height" mask="999" suffix=" cm">
+        </mat-form-field>
+      </div>
+      <div class="col" fxFlex="0 1 25%" fxFlex.lt-md="0 1 50%" fxFlex.lt-lg="0 1 25%" fxFlex.lt-sm="100%">
+        <mat-form-field appearance="outline">
+          <mat-label>Largura</mat-label>
+          <input matInput placeholder="Largura" formControlName="width" mask="999" suffix=" cm">
+        </mat-form-field>
+      </div>
+      <div class="col" fxFlex="0 1 25%" fxFlex.lt-md="0 1 50%" fxFlex.lt-lg="0 1 25%" fxFlex.lt-sm="100%">
+        <mat-form-field appearance="outline">
+          <mat-label>Profundidade</mat-label>
+          <input matInput placeholder="Profundidade" formControlName="depth" mask="999" suffix=" cm">
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row wrap" class="row">
+      <div class="col" fxFlex="0 1 25%" fxFlex.lt-md="0 1 50%" fxFlex.lt-lg="0 1 25%" fxFlex.lt-sm="100%">
+        <mat-form-field appearance="outline">
+          <mat-label>SKU</mat-label>
+          <input matInput placeholder="SKU" formControlName="sku">
+        </mat-form-field>
+      </div>
+      <div class="col" fxFlex="0 1 25%" fxFlex.lt-md="0 1 50%" fxFlex.lt-lg="0 1 25%" fxFlex.lt-sm="100%">
+        <mat-form-field appearance="outline">
+          <mat-label>Quantidade em estoque</mat-label>
+          <input matInput placeholder="Quantidade em estoque" formControlName="stock" required>
+          <mat-error *ngIf="form.stock.errors?.required">Quantidade é um campo obrigatório</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row wrap" class="row toggle">
+      <div class="col" fxFlex="0 1 25%" fxFlex.lt-md="0 1 50%" fxFlex.lt-lg="0 1 25%" fxFlex.lt-sm="100%">
+        <mat-slide-toggle formControlName="activedProduct" color="primary">Produto ativado ?</mat-slide-toggle>
+      </div>
+      <div class="col" fxFlex="0 1 25%" fxFlex.lt-md="0 1 50%" fxFlex.lt-lg="0 1 25%" fxFlex.lt-sm="100%">
+        <mat-slide-toggle formControlName="featuredProduct" color="primary">Produto em destaque ?</mat-slide-toggle>
+      </div>
+      <div class="col" fxFlex="0 1 25%" fxFlex.lt-md="0 1 50%" fxFlex.lt-lg="0 1 25%" fxFlex.lt-sm="100%">
+        <mat-slide-toggle formControlName="promotionProduct" color="primary">Produto em promoção ?</mat-slide-toggle>
+      </div>
+    </div>
+    <div fxLayout="row wrap" class="row">
+      <div class="col" fxFlex="0 1 100%">
+        <mat-form-field appearance="outline">
+          <mat-label>Descrição</mat-label>
+          <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="10" cdkAutosizeMaxRows="10"
+            formControlName="description" required></textarea>
+          <mat-error *ngIf="form.description.errors?.required">Descrição é um campo obrigatório</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row wrap" class="row">
+      <div class="col" fxFlex="0 1 25%" fxFlex.lt-md="0 1 50%" fxFlex.lt-lg="0 1 25%" fxFlex.lt-sm="100%">
+        <mat-form-field appearance="outline">
+          <mat-label>Foto de capa</mat-label>
+          <ngx-mat-file-input formControlName="photo_1" accept="image/png, image/jpeg">
+          </ngx-mat-file-input>
+          <mat-error *ngIf="form.photo_1.errors?.required">Capa é um campo obrigatório</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col" fxFlex="0 1 25%" fxFlex.lt-md="0 1 50%" fxFlex.lt-lg="0 1 25%" fxFlex.lt-sm="100%">
+        <mat-form-field appearance="outline">
+          <mat-label>Foto 2</mat-label>
+          <ngx-mat-file-input formControlName="photo_2" accept="image/png, image/jpeg">
+          </ngx-mat-file-input>
+        </mat-form-field>
+      </div>
+      <div class="col" fxFlex="0 1 25%" fxFlex.lt-md="0 1 50%" fxFlex.lt-lg="0 1 25%" fxFlex.lt-sm="100%">
+        <mat-form-field appearance="outline">
+          <mat-label>Foto 3</mat-label>
+          <ngx-mat-file-input formControlName="photo_3" accept="image/png, image/jpeg">
+          </ngx-mat-file-input>
+        </mat-form-field>
+      </div>
+      <div class="col" fxFlex="0 1 25%" fxFlex.lt-md="0 1 50%" fxFlex.lt-lg="0 1 25%" fxFlex.lt-sm="100%">
+        <mat-form-field appearance="outline">
+          <mat-label>Foto 4</mat-label>
+          <ngx-mat-file-input formControlName="photo_4" accept="image/png, image/jpeg">
+          </ngx-mat-file-input>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+  <div fxLayout="row wrap" class="row">
+    <div class="col" fxFlex="0 1 25%" fxFlex.lt-md="0 1 50%" fxFlex.lt-lg="0 1 25%" fxFlex.lt-sm="100%">
+      <button mat-raised-button class="btn-partner width-100" (click)="registerProduct()"
+        [disabled]="formProduct.invalid">Cadastrar</button>
+    </div>
+  </div>
+</div>
