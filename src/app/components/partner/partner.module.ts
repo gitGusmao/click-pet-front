@@ -5,7 +5,6 @@ import { PartnerRoutingModule } from './partner-routing.module';
 import { PartnerComponent } from './partner.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule } from '@angular/material/icon';
-import { NgxEchartsModule } from 'ngx-echarts';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
@@ -18,7 +17,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     PartnerRoutingModule,
     FlexLayoutModule,
     MatIconModule,
-    NgxEchartsModule,
     MatSidenavModule,
     MatButtonModule,
     MatToolbarModule
