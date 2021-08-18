@@ -1,5 +1,5 @@
 ### STAGE 1: Build ###
-FROM node:alpine:3.12 AS build
+FROM alpine:3.11 AS build
 
 #### make the 'app' folder the current working directory
 WORKDIR /usr/src/app
