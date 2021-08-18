@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'nie-api-front'`, () => {
+  it(`should have as title 'clicke-pet-front'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('nie-api-front');
+    expect(app.title).toEqual('clicke-pet-front');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('nie-api-front app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('clicke-pet-front app is running!');
   });
 });
