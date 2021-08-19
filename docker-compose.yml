@@ -1,0 +1,7 @@
+version: "3.7"
+services:
+  clicke-pet:
+    container_name: clicke-pet
+    build: .
+    ports:
+      - "4200:8080"
