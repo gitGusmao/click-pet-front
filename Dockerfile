@@ -1,6 +1,6 @@
 FROM node:14-alpine AS build-step
 
-RUN mkdir -p /app
+RUN mkdir -p /app && chown -R node:node /app
 
 WORKDIR /app
 COPY package.json /app
