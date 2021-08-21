@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
 
-  baseApiPath: 'http://localhost:8081/'
+  baseApiPath: 'http://ms-pet-click-pet-front.apps.na46.prod.nextcle.com/'
 };

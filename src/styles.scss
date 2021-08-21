@@ -37,11 +37,7 @@ a:hover {
 }
 
 .content-wrapper {
-  padding: 2rem;
-
-  @media (max-width: 570px) {
-    padding: 1rem;
-  }
+  padding: 1rem;
 }
 
 body {
